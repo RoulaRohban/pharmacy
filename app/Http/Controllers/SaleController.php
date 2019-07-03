@@ -7,7 +7,6 @@ use App\Sale;
 use App\SaleDrug;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\User;
 
 class SaleController extends Controller
 {

@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Drug;
-use App\profit;
-use DB;
-use App\SaleDrug;
 use App\Sale;
+use DB;
 
 class profitController extends Controller
 {
