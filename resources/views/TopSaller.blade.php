@@ -1,80 +1,34 @@
-<!doctype html>
-<html>
+@extends('layout')
 
-<head>
-	<title>Polar Area Chart</title>
-	<script src="../../dist/Chart.min.js"></script>
-	<script src="../utils.js"></script>
-	<style>
-		canvas {
-			-moz-user-select: none;
-			-webkit-user-select: none;
-			-ms-user-select: none;
-		}
-	</style>
-</head>
+@section('title')
+  <h1 class='title appTitle'>Drug Top saler</h1>
+@endsection
 
-<body>
-	<div id="canvas-holder" style="width:50%">
-		<canvas id="chart-area"></canvas>
-	</div>
-	<script>
-		var randomScalingFactor = function() {
-			return Math.round(Math.random() * 100);
-		};
+@section('content')
+  <table class='table appTable'>
+    <thead>
+      <tr>
+        <th>Drug name</th>
+        <th>amount of sale</th>
+        <th></th>
+      </tr>
+    </thead>
 
-		var chartColors = window.chartColors;
-		var color = Chart.helpers.color;
-		var config = {
-			data: {
-				datasets: [{
-					data: [
-					
-					],
-					backgroundColor: [
-						color(chartColors.red).alpha(0.5).rgbString(),
-						color(chartColors.orange).alpha(0.5).rgbString(),
-						color(chartColors.yellow).alpha(0.5).rgbString(),
-						color(chartColors.green).alpha(0.5).rgbString(),
-						color(chartColors.blue).alpha(0.5).rgbString(),
-					],
-					label: 'My dataset' // for legend
-				}],
-				labels: [
-					'Red',
-					'Orange',
-					'Yellow',
-					'Green',
-					'Blue'
-				]
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: 'right',
-				},
-				title: {
-					display: true,
-					text: 'Chart.js Polar Area Chart'
-				},
-				scale: {
-					ticks: {
-						beginAtZero: true
-					},
-					reverse: false
-				},
-				animation: {
-					animateRotate: false,
-					animateScale: true
-				}
-			}
-		};
-
-		window.onload = function() {
-			var ctx = document.getElementById('chart-area');
-			window.myPolarArea = Chart.PolarArea(ctx, config);
-		};
-	</script>
-</body>
-
-</html>
+    <tbody>
+      @foreach($items as $item)
+        <tr>
+          <td>{{ $item->drug }}</td>
+          <td>{{ $item->sum }}</td>
+          <td>
+           <a style="background-color: #34699A"  href='/drugs/{{ $item->id }}/edit' class='button is-success'>
+                  <span>
+                   <i style="background-color: #34699A" class="fas fa-edit"></i>
+                   </span>
+                   <span style="background-color: #34699A">Change</span>
+                  </a>
+                      </td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
+@endsection

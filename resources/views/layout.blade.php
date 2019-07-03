@@ -79,6 +79,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="/CheckQTY">Low quantity Drugs</a>
                                         </li>
+                                         <li class="nav-item">
+                                            <a class="nav-link" href="/TopSaller">Top saller Drugs</a>
+                                        </li>
 
                                      
                                     </ul>
