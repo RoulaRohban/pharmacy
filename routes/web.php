@@ -14,8 +14,7 @@ Route::view('/welcome5', 'welcome5');
 Route::view('/welcome6', 'welcome6');
 Route::view('/contact_us','contact_us');
 Route::view('/Login','Login');
-
-
+Route::view('/EditInfo','EditInfo');
 //Tests
 Route::view('/profitchart','profitchart');
 //Route::view('/TopSaller','TopSaller');
