@@ -6,7 +6,6 @@ use App\Category;
 use App\Drug;
 use App\Provider;
 use App\Sale;
-use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
