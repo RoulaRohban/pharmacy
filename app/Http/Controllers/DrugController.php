@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Drug;
 use App\Provider;
+use Illuminate\Http\Request;
 use Carbon\Carbon;
 use DB;
 use Charts;
