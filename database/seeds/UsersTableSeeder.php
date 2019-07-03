@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,14 +12,21 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = [
+            $this->create('Roula', 'roula.rohban@gmail.com', 'secret'),
+            $this->create('Fayez', 'fayez.ghazzawi@hotmail.com', 'secret'),
+            $this->create('Abdo', 'abdo.abdo@gmail.com', 'secret'),
+        ];
+
+        DB::table('users')->insert($users);
     }
 
-    private function create($name, $display_name)
+    private function create($name, $email, $password)
     {
-    	return [
-    		'name' => $name,
-    		'display_name' => $display_name
-    	];
+        return [
+            'name' => $name,
+            'email' => $email,
+            'password' => $password
+        ];
     }
 }
