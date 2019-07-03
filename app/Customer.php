@@ -2,9 +2,11 @@
 
 namespace App;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Customer extends Model
 {    
     protected $fillable = [
         'name',
@@ -12,7 +14,12 @@ class User extends Authenticatable
         'phone',
         'adress',
     ];
-    protected $table = 'users';
+    protected $table = 'customers';
+
+     public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
     // use Notifiable;
 
     // /**
@@ -41,8 +48,8 @@ class User extends Authenticatable
     // protected $casts = [
     //     'email_verified_at' => 'datetime',
     // ];
-    public function drugs()
-    {
-        return $this->hasMany(Sale::class);
-    }
+    // public function drugs()
+    // {
+    //     return $this->hasMany(Sale::class);
+    // }
 }

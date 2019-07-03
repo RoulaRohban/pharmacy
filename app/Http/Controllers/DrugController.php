@@ -7,6 +7,7 @@ use App\Drug;
 use App\Provider;
 use Carbon\Carbon;
 use DB;
+//use Chart;
 
 class DrugController extends Controller
 {
@@ -154,5 +155,25 @@ function chartt()
             'providers' => $providers,
             'categories' => $categories,
         ]);
+    }
+    public function topOrders()
+{              $items = DB::table('drugs')
+                  ->join('sales_drugs', 'drugs.id', '=', 'sales_drugs.drug_id')
+                  ->select(
+                  DB::raw('sum(sales_drugs.amount) as sum'),
+                  DB::raw('drugs.title as drug'))
+                  ->groupBy('drugs.title')
+                  ->orderByRaw('SUM(sales_drugs.amount) DESC')
+                  ->take(5)
+                  ->get();
+                     // return $items;
+                  
+      $array[] = ['drug', 'Sum'];
+     foreach($items as $key => $value)
+     {
+      $array[++$key] = [$value->drug, $value->sum];
+     }
+     return view('TopSaller')->with('drug', json_encode($array));
+                //  return view('TopSaller',compact($items));
     }
 }

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use DB;
-
-class UserController extends Controller
+use App\Customer;
+class CustomerController extends Controller
 {
     function genderchart()
     {
-     $data = DB::table('users')
+     $data = DB::table('customers')
        ->select(
         DB::raw('gender as gender'),
         DB::raw('count(*) as number'))

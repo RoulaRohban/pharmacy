@@ -47,7 +47,7 @@
             </div>
           </div>
         </section>
-        @empty($sales[$index])
+<!--         @empty($sales[$index])
           <div class="notification is-info has-text-centered" style='margin-top: 0.5rem'>
            No sales
           </div>
@@ -56,7 +56,7 @@
           <div class="notification is-info has-text-centered" style='margin-top: 0.5rem'>
            No Purchases
             </div>
-            @endempty
+            @endempty -->
         @isset($sales[$index])
           <table class='table is-fullwidth'>
             <thead>
@@ -109,8 +109,14 @@
                     <?php $i+=$drug->OrginalPrice * $drug->balance ; ?>
                   @endforeach
             @endforeach
-            </tbody>
-            <?php echo $j-$i ; ?>
+            <tr>
+         <td></td>
+         <td></td>
+        <td></td>
+        <td></td>
+        <td><strong>Total : <?php echo $j-$i ; ?> </strong></td>
+      </tr>
+            </tbody> 
           </table>
         @endisset
       @endif
