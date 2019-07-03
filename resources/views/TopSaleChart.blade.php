@@ -1,25 +1,21 @@
-@extends(layout')
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chart with VueJS</title>
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Chart Demo</div>
-
-                <div class="panel-body">
-                    {!! $chart->html() !!}
-                </div>
-
-                <hr>
-                {!!$pie->html() !!}
-            </div>
+    </head>
+    <body>
+        <div id="app">
+            {!! $chart->container() !!}
         </div>
-    </div>
-</div>
-{!! Charts::scripts() !!}
-{!! $chart->script() !!}
-
-{!! $pie->script() !!}
-
-@endsection
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+            });
+        </script>
+        <script src=https://cdnjs.cloudflare.com/ajax/libs/echarts/4.0.2/echarts-en.min.js charset=utf-8></script>
+        {!! $chart->script() !!}
+    </body>
+</html>

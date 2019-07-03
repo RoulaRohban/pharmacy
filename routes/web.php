@@ -16,6 +16,7 @@ Route::middleware(['auth'])->group(function () {
     Route::view('/welcome5', 'welcome5');
     Route::view('/welcome6', 'welcome6');
     Route::view('/contact_us', 'contact_us');
+    Route::view('/EditInfo','EditInfo');
 
 //Route::get('/roles', 'RoleController@index')->name('roles');
 
