@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Zizaco\Entrust\EntrustServiceProvider::class,
+        consoleTVs\charts\chartsServiceProvider::class,
 
 
     ],
@@ -229,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Charts'  =>ConsoleTVs\Charts\Facades\Charts::class,
     ],
 
 ];

@@ -25,6 +25,7 @@ class CreateDrugsTable extends Migration
             $table->float('OrginalPrice');
             $table->date('ExpiredDate');
             $table->date('PurchaseDate');
+            $table->integer('limitQTY');
         });
     }
     

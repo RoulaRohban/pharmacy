@@ -20,7 +20,6 @@
 
 <body>
  
-    <!-- main wrapper -->
  
     <div class="dashboard-main-wrapper">
         <!-- navbar -->
@@ -39,7 +38,7 @@
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
-                                    <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                    <h5 class="mb-0 text-white nav-user-name">Basema Olayyet </h5>
                                     <span class="status"></span><span class="ml-2">Available</span>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
@@ -51,12 +50,7 @@
                 </div>
             </nav>
         </div>
-        <!-- ============================================================== -->
-        <!-- end navbar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- left sidebar -->
-        <!-- ============================================================== -->
+      
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -151,8 +145,8 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="pages/chart-charts.html">View top sellers</a>
                                         </li>
-                                         <li class="nav-item">
-                                            <a class="nav-link" href="/profit">View earnings by date</a>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">View chart Profits by date</a>
                                         </li>
                                      
                                     </ul>
@@ -165,6 +159,10 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="/reports/sales">List sales by date <span class="badge badge-secondary">New</span></a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/profit">View Profits by date</a>
                                         </li>
                                         
                                 
@@ -182,34 +180,20 @@
         <div class="dashboard-wrapper">
             <div class="dashboard-ecommerce">
                 <div class="container-fluid dashboard-content ">
-                    <!-- ============================================================== -->
-                    <!-- pageheader  -->
-                    <!-- ============================================================== -->
+                    
                     @yield('title')
                      @yield('summary')
-                      
-
               
                      <div >
         @yield('content')
       </div>
-                    <!-- ============================================================== -->
-                    <!-- end pageheader  -->
-                    <!-- ============================================================== -->
-      
-            <!-- ============================================================== -->
-            <!-- end footer -->
-            <!-- ============================================================== -->
+                
         </div>
         <!-- ============================================================== -->
         <!-- end wrapper  -->
         <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- end main wrapper  -->
-    <!-- ============================================================== -->
-    <!-- Optional JavaScript -->
-    <!-- jquery 3.3.1 -->
+ 
     <script src="/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
