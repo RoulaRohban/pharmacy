@@ -29,7 +29,7 @@ class HomeController extends Controller
         else if (auth()->user()->hasRole('user'))
             return redirect('/welcome1');
 
-        return view('welcomm');
+        return view('/welcome1');
     }
 
     public function logout()
