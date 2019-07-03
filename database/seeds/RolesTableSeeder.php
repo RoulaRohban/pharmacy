@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,19 +13,21 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-    	$roles = [
-    		$this->create('pharmacist', 'Pharmacist'),
-    		$this->create('user', 'User'),
-    	];
-    	
-		DB::table('roles')->insert($roles);
+        $roles = [
+            $this->create('pharmacist', 'Pharmacist'),
+            $this->create('user', 'User'),
+        ];
+
+        DB::table('roles')->insert($roles);
     }
 
     private function create($name, $display_name)
     {
-    	return [
-    		'name' => $name,
-    		'display_name' => $display_name
-    	];
+        return [
+            'name' => $name,
+            'display_name' => $display_name,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ];
     }
 }

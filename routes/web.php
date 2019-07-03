@@ -15,6 +15,8 @@ Route::view('/welcome6', 'welcome6');
 Route::view('/contact_us','contact_us');
 Route::view('/Login','Login');
 
+//Route::get('/roles', 'RoleController@index')->name('roles');
+
 
 //Tests
 Route::view('/profitchart','profitchart');

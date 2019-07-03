@@ -177,6 +177,7 @@ return [
 
         Zizaco\Entrust\EntrustServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class
     ],
 
     /*
@@ -229,5 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
     ],
 ];
