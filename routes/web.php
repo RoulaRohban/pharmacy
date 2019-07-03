@@ -22,7 +22,7 @@ Route::view('/profitchart','profitchart');
 //Route::get('/DrawChart', 'SaleController@DrawChart');
 Route::get('/sale_order','SaleController@create');
 Route::post('/sale_order', 'SaleController@store');
-//Route::get('/TopSale','DrugController@topOrders');
+Route::get('/TopSaleChart','DrugController@TopSaleChart');
 //
 
 
@@ -57,7 +57,8 @@ Route::get('/CheckDate','DrugController@CheckDate');
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/TopSaller','DrugController@topOrders');
-Route::post('/TopSaller','DrugController@topOrders');
+// Route::post('/TopSaller','DrugController@topOrders');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

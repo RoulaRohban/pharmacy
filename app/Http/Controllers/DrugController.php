@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Drug;
 use App\Provider;
+use Illuminate\Http\Request;
 use Carbon\Carbon;
 use DB;
-//use Chart;
+use Charts;
 
 class DrugController extends Controller
 {
@@ -161,19 +162,49 @@ function chartt()
                   ->join('sales_drugs', 'drugs.id', '=', 'sales_drugs.drug_id')
                   ->select(
                   DB::raw('sum(sales_drugs.amount) as sum'),
-                  DB::raw('drugs.title as drug'))
+                  DB::raw('drugs.title as drug'),
+                  DB::raw('drugs.id as id'))
                   ->groupBy('drugs.title')
+                   ->groupBy('drugs.id')
                   ->orderByRaw('SUM(sales_drugs.amount) DESC')
                   ->take(5)
                   ->get();
-                     // return $items;
+                     //return $items;
                   
-      $array[] = ['drug', 'Sum'];
-     foreach($items as $key => $value)
-     {
-      $array[++$key] = [$value->drug, $value->sum];
-     }
-     return view('TopSaller')->with('drug', json_encode($array));
-                //  return view('TopSaller',compact($items));
+     //  $array[] = ['drug', 'Sum'];
+     // foreach($items as $key => $value)
+     // {
+     //  $array[++$key] = [$value->drug, $value->sum];
+     // }
+     // return view('TopSaller')->with('drug', json_encode($array));
+                return view('TopSaller',compact('items'));
+    }
+    public function TopSaleChart()
+    {
+        $items = DB::table('drugs')
+                  ->join('sales_drugs', 'drugs.id', '=', 'sales_drugs.drug_id')
+                  ->select(
+                  DB::raw('sum(sales_drugs.amount) as sum'),
+                  DB::raw('drugs.title as drug'),
+                  DB::raw('drugs.id as id'))
+                  ->groupBy('drugs.title')
+                 ->groupBy('drugs.id')
+                  ->orderByRaw('SUM(sales_drugs.amount) DESC')
+                  ->take(5)
+                  ->get();
+         $chart = Charts::database($items, 'bar', 'highcharts')
+                  ->title("Monthly new Register Users")
+                  ->elementLabel("Total Users")
+                  ->dimensions(1000, 500)
+                  ->responsive(false);
+                // ->groupByMonth(date('Y'), true);
+
+        $pie  =  Charts::create('pie', 'highcharts')
+                    ->title('My nice chart')
+                    ->labels(['First', 'Second', 'Third'])
+                    ->values([5,10,20])
+                    ->dimensions(1000,500)
+                    ->responsive(false);
+        return view('TopSaleChart',compact('chart','pie'));
     }
 }

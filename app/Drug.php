@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Drug extends Model
 {
     protected $fillable = [
+        'id',
         'title',
         'provider_id',
         'category_id',
