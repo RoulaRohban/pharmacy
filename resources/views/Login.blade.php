@@ -70,8 +70,9 @@
                     
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="welcomm" >Home</a></li>
-                                <li><a href="Login" class="active">login</a></li>
+                                <li><a href="Login" class="active">Login</a></li>
                                 <li><a href="contact_us">Contact_us</a></li>
+                                <li><a href="contact_us">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -95,12 +96,8 @@
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
 						<form action="#">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
-							<span>
-								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
-							</span>
+							<input type="email" placeholder="Email" />
+							<input type="password" placeholder="Password" />
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
 					</div><!--/login form-->
@@ -115,6 +112,13 @@
 							<input type="text" placeholder="Name"/>
 							<input type="email" placeholder="Email Address"/>
 							<input type="password" placeholder="Password"/>
+
+                            <div>
+                            <label>Pharmacyist</label>
+                            <input type="radio" name="gender" value="male">
+                            <label>user</label>
+                            <input type="radio" name="gender" value="male">
+                            </div>
 							<button type="submit" class="btn btn-default">Signup</button>
 						</form>
 					</div><!--/sign up form-->

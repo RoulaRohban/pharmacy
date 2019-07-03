@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f967ac857acb0b247a9351e79dc75ee",
+    "content-hash": "24e727d8df1b23f50615c84e12b12b5e",
     "packages": [
         {
             "name": "ajthinking/tinx",

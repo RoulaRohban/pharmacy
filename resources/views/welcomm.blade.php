@@ -61,12 +61,10 @@
                     
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="welcomm" class="active">Home</a></li>
-                                <li class="dropdown"><a href="Login">login</a>
-                                    
+                                <li class="dropdown"><a href="Login">Login</a>
                                 </li> 
-                            
-                                
                                 <li><a href="contact_us" >Contact us</a></li>
+                                <li><a href="contact_us" >Logout</a></li>
                             </ul>
                         </div>
                     </div>
