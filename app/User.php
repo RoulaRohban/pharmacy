@@ -20,4 +20,9 @@ class User extends Authenticatable
         'created_at',
         'updated_at',
     ];
+
+    public function serPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }
