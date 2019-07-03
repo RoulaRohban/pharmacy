@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (auth()->user()->hasRole('pharmacist'))
+            return redirect('/drugs');
+        else if (auth()->user()->hasRole('user'))
+            return redirect('/welcome1');
+
         return view('welcomm');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('Login');
     }
 }

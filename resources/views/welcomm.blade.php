@@ -65,13 +65,17 @@
                 @if(\Illuminate\Support\Facades\Auth::check())
                   <a disabled>{{ auth()->user()->name }}</a>
                 @else
-                  <a href="Login">login</a>
+                  <a href="Login">Login</a>
                 @endif
 
               </li>
 
+              <li class="dropdown">
+                @if(\Illuminate\Support\Facades\Auth::check())
+                  <a href="Logout" >Logout</a>
+                @endif
 
-              <li><a href="contact_us">Contact us</a></li>
+              </li>
             </ul>
           </div>
         </div>
