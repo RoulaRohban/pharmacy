@@ -66,6 +66,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
+    Route::put('/users/{id}', 'UserController@update');
+
 });
 Auth::routes();
 
