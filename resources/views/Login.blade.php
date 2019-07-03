@@ -70,7 +70,7 @@
                     
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="welcomm" >Home</a></li>
-                                <li><a href="Login" class="active">login</a></li>
+                                <li><a href="Login" class="active">Login</a></li>
                                 <li><a href="contact_us">Contact_us</a></li>
                             </ul>
                         </div>
