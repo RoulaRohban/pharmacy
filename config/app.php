@@ -177,7 +177,6 @@ return [
 
         Zizaco\Entrust\EntrustServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
-        //https://charts.erik.cat/installation.html
     ],
 
     /*
