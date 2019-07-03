@@ -58,3 +58,6 @@ Route::get('/CheckDate','DrugController@CheckDate');
 
 Route::get('/TopSaller','DrugController@topOrders');
 Route::post('/TopSaller','DrugController@topOrders');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
