@@ -188,7 +188,7 @@ function chartt()
                   DB::raw('drugs.title as drug'),
                   DB::raw('drugs.id as id'))
                   ->groupBy('drugs.title')
-                   ->groupBy('drugs.id')
+                 ->groupBy('drugs.id')
                   ->orderByRaw('SUM(sales_drugs.amount) DESC')
                   ->take(5)
                   ->get();
